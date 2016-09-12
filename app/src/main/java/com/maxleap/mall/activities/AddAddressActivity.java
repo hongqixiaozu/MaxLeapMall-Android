@@ -145,6 +145,8 @@ public class AddAddressActivity extends BaseActivity {
         if (TextUtils.isEmpty(street)) {
             FFLog.toast(this, String.format(getString(R.string.activity_update_address_empty),
                     getString(R.string.activity_add_address_address)));
+					
+					
             return true;
         }
         if (!NoUtilCheck.isMobileNo(tel)) {
