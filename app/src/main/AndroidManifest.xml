@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maxleap.mall">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--LPNS-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".MallApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="ml_channel"
+            android:value="${ml_channel}" />
+        <meta-data
+            android:name="ml_region"
+            android:value="${ml_region}" />
+        <meta-data
+            android:name="com.maxleap.APPLICATION_ID"
+            android:value="${ml_appid}" />
+        <meta-data
+            android:name="com.maxleap.CLIENT_KEY"
+            android:value="${ml_apikey}" />
+
+
+        <activity
+            android:name="com.maxleap.mall.activities.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.maxleap.mall.activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.AccountInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.AddAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.ProductsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.ProductDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.MyOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.OrderConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.CommentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.maxleap.mall.activities.SpecActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.maxleap.mall.activities.ReviewActivity"
+            android:screenOrientation="portrait" />
+
+        <!--Push 类型-->
+        <meta-data
+            android:name="ml_push"
+            android:value="lpns" />
+
+        <!--用于接收 Push 信息-->
+        <receiver
+            android:name="com.maxleap.MLPushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.maxleap.push.intent.RECEIVE" />
+                <action android:name="com.maxleap.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.maxleap.MLPushService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.maxleap.MLBootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.maxleap.MLHeartBeatReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.maxleap.push.intent.HEARTBEAT" />
+                <action android:name="com.maxleap.push.intent.RECONNECT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/view_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/login_tel_area"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/activity_login_tel"
+            android:textColor="@color/normal_font_color"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/login_tel"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/activity_login_tel_hint"
+            android:inputType="number"
+            android:lines="1"
+            android:paddingRight="16dp"
+            android:singleLine="true"
+            android:textColor="@color/normal_font_color"
+            android:textColorHint="@color/normal_hint_color"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_verify_area"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/activity_login_verify_code"
+            android:textColor="@color/normal_font_color"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/login_verify_code"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="@string/activity_login_verify_code_hint"
+            android:inputType="number"
+            android:lines="1"
+            android:paddingRight="16dp"
+            android:singleLine="true"
+            android:textColor="@color/normal_font_color"
+            android:textColorHint="@color/normal_hint_color"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/login_verify_code_get"
+            android:layout_width="99dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/normal_btn_bg"
+            android:text="@string/activity_login_get_verify_code"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/activity_login_notice"
+        android:textColor="@color/normal_hint_color"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/login_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/normal_btn_bg"
+        android:text="@string/activity_login_verify"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/login_progress_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="-50dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>
