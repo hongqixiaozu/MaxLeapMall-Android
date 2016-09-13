@@ -18,7 +18,7 @@
     <string name="fragment_mine_help_center">服务中心</string>
 
     <!-- Login Activity -->
-    <string name="activity_login_title">登陆</string>
+    <string name="activity_login_title">登录</string>
     <string name="activity_login_tel">手机号</string>
     <string name="activity_login_tel_hint">输入您的手机号码</string>
     <string name="activity_login_verify_code">验证码</string>
