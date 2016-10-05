@@ -54,6 +54,8 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 finish();
+
+
             }
         });
     }
